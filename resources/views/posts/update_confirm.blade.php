@@ -2,7 +2,7 @@
   
 @section('content')
    
-<form action="{{ route('posts.update', [$post_id]) }}" method="POST">
+<form action="{{ route('posts.update', [$post]) }}" method="GET">
     {{ csrf_field() }}
     <div class="container">
         

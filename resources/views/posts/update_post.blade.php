@@ -5,10 +5,9 @@
 <div class="container">
     <fieldset>
         <legend>Update Post</legend>
-
-        <form action="{{ route('posts.update_confirm') }}" method="POST">
-            {{ csrf_field() }}
-            <div class="container">
+            <form method="post" action="{{ route('posts.update', $post) }}">
+                @method('PATCH') 
+                @csrf
             <input type="text" name="id" value="{{$post->id}}" hidden>
             <div class="row justify-content-center">
                 <div class="col-xs-6 col-sm-6 col-md-6">
@@ -37,7 +36,7 @@
              </div>
             <div class="row justify-content-center">
                     <div class="col-xs-6 col-sm-6 col-md-6 text-center">
-                            <button type="submit" class="btn btn-primary">Confirm</button>
+                            <button type="submit" class="btn btn-primary">Update</button>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6 text-center">
                         {{-- <a href="{{ URL::previous() }}" class="btn btn-warning">Back</a> --}}

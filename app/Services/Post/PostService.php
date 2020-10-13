@@ -16,9 +16,16 @@ class PostService implements PostServiceInterface
  
     public function getPost($auth_id, $user_type)
     {
-        return $this->postDao->getPost($auth_id, $user_type);
+        $post = $this->postDao->getPost($auth_id, $user_type);
+        return $post;
     }
 
+    public function  getPostdetail($id)
+    {
+        $post = $this->postDao-> getPostdetail($id);
+        return $post;
+    }
+   
     public function store($auth_id, $new_post)
     {
         return $this->postDao->store($auth_id, $new_post);
@@ -33,4 +40,15 @@ class PostService implements PostServiceInterface
     {
         return $this->postDao->update($new_post);
     }
+
+    public function delete($id, $auth_id)
+    {
+        return $this->postDao->delete($id, $auth_id);
+    }
+
+    public function searchPost($data, $auth_id, $user_type)
+    {
+        return $this->postDao->searchPost($data, $auth_id, $user_type);
+    }
+
 }

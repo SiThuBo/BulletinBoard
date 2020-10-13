@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->binary('profile');
+            $table->string('profile');
             $table->char('type',1);
             $table->string('phone', 20)->nullable();
             $table->string('address')->nullable();
@@ -30,7 +30,7 @@ class CreateUsersTable extends Migration
             $table->integer('deleted_user_id')->unsigned()->nullable();
             $table->rememberToken();
             $table->timestamps();
-            $table->softDeletes()->nullable();
+            $table->softDeletes('deleted_at')->nullable();
         });
     }
 
