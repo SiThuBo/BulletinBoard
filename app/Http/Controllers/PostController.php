@@ -106,7 +106,7 @@ class PostController extends Controller
     public function destroy($id)
     {
         $auth_id = auth()->user()->id;
-        $post = $this->postService->delete($id, $auth_id);
+        $this->postService->delete($id, $auth_id);
         return redirect()->route("posts.index");
     }
 

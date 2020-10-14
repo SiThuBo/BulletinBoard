@@ -95,4 +95,12 @@ class UserDao implements UserDaoInterface
         $user->save();
     }
    
+    public function delete($id, $auth_id)
+    {
+        $user = User::find($id);
+        $user->deleted_user_id = $auth_id;
+        $user->deleted_at = now();
+        $user->save();
+        return $user;
+    }
 }

@@ -147,7 +147,9 @@ class UserController extends Controller
 
     public function destroy($id)
     {
-        //
+        $auth_id = auth()->user()->id;
+        $this->userService->delete($id, $auth_id);
+        return redirect()->route("users.index");
     }
 
     public function search(Request $request)

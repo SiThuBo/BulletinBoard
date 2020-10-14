@@ -15,4 +15,6 @@ interface UserServiceInterface
     public function update_user($new_user);
 
     public function savePassword($password);
+
+    public function delete($id, $auth_id);
 }

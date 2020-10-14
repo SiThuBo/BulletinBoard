@@ -48,4 +48,9 @@ class UserService implements UserServiceInterface
         $this->userDao->savePassword($password);
     }
 
+    public function delete($id, $auth_id)
+    {
+        $this->userDao->delete($id, $auth_id);
+    }
+
 }
